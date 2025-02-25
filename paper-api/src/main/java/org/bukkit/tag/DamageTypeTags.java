@@ -65,7 +65,7 @@ public final class DamageTypeTags {
 
     public static final Tag<DamageType> IS_PROJECTILE = getTag("is_projectile");
 
-    public static final Tag<DamageType> IS_MACE_SMASH = getTag("mace_smash");
+    public static final Tag<DamageType> MACE_SMASH = getTag("mace_smash");
 
     public static final Tag<DamageType> NO_ANGER = getTag("no_anger");
 
@@ -81,6 +81,13 @@ public final class DamageTypeTags {
 
     public static final Tag<DamageType> WITHER_IMMUNE_TO = getTag("wither_immune_to");
     // End generate - DamageTypeTags
+    /**
+     * Vanilla tag representing damage types which originate from mace smashes.
+     *
+     * @deprecated use {@link #MACE_SMASH}
+     */
+    @Deprecated(since = "1.21.4", forRemoval = true)
+    public static final Tag<DamageType> IS_MACE_SMASH = MACE_SMASH;
     /**
      * Internal use only.
      */

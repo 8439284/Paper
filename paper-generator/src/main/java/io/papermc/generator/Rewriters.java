@@ -160,19 +160,7 @@ public final class Rewriters {
                     return keyedName;
                 }
             })
-            .register("DamageTypeTags", DamageTypeTags.class, new RegistryTagRewriter<>(Registries.DAMAGE_TYPE, DamageType.class) {
-
-                @Deprecated // spigot mistake
-                private static final Map<String, String> RENAMES = Map.of(
-                    "MACE_SMASH", "IS_MACE_SMASH"
-                );
-
-                @Override
-                protected String rewriteFieldName(TagKey<net.minecraft.world.damagesource.DamageType> tagKey) {
-                    String keyedName = super.rewriteFieldName(tagKey);
-                    return RENAMES.getOrDefault(keyedName, keyedName);
-                }
-            })
+            .register("DamageTypeTags", DamageTypeTags.class, new RegistryTagRewriter<>(Registries.DAMAGE_TYPE, DamageType.class))
             .register("MapCursorType", MapCursor.Type.class, new RegistryFieldRewriter<>(Registries.MAP_DECORATION_TYPE, "getType"))
             .register("Structure", Structure.class, new RegistryFieldRewriter<>(Registries.STRUCTURE, "getStructure"))
             .register("StructureType", StructureType.class, new RegistryFieldRewriter<>(Registries.STRUCTURE_TYPE, "getStructureType"))

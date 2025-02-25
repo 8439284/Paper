@@ -833,12 +833,19 @@ public interface Tag<T extends Keyed> extends Keyed {
 
     Tag<GameEvent> GAME_EVENT_WARDEN_CAN_LISTEN = Bukkit.getTag(REGISTRY_GAME_EVENTS, NamespacedKey.minecraft("warden_can_listen"), GameEvent.class);
     // End generate - Tag
-
     /**
      * @deprecated {@link #WOOL_CARPETS}.
      */
     @Deprecated(since = "1.19")
     Tag<Material> CARPETS = WOOL_CARPETS;
+    /**
+     * Vanilla block tag representing all blocks that are replaceable by
+     * dripstone.
+     *
+     * @deprecated use {@link #DRIPSTONE_REPLACEABLE_BLOCKS}
+     */
+    @Deprecated(since = "1.21.4", forRemoval = true)
+    Tag<Material> DRIPSTONE_REPLACEABLE = DRIPSTONE_REPLACEABLE_BLOCKS;
     /**
      * Vanilla item tag representing all piglin food.
      *
@@ -860,6 +867,13 @@ public interface Tag<T extends Keyed> extends Keyed {
      */
     @Deprecated(since = "1.16.2", forRemoval = true)
     Tag<Material> ITEMS_FURNACE_MATERIALS = ITEMS_STONE_CRAFTING_MATERIALS;
+    /**
+     * Vanilla item tag representing all items which modify note block sounds when placed on top.
+     *
+     * @deprecated use {@link #ITEMS_NOTEBLOCK_TOP_INSTRUMENTS}
+     */
+    @Deprecated(since = "1.21.4", forRemoval = true)
+    Tag<Material> ITEMS_NOTE_BLOCK_TOP_INSTRUMENTS = ITEMS_NOTEBLOCK_TOP_INSTRUMENTS;
     /**
      * Vanilla item tag representing all tools.
      *
